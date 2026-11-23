@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy 3rd, Langga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0e1330;--bg2:#1b2150;--ink:#f6efe4;--soft:#c9c6dd;--paper:#fbf5ea;--paperInk:#2a2340;--pink:#ff7a93}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:radial-gradient(120% 70% at 50% 0%,var(--bg2),var(--bg) 60%) fixed,var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif;overflow-x:clip;min-height:100vh}
+#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:clamp(36px,6vw,80px) max(5vw,16px) 80px}
+.hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,4vw,44px);align-items:center;justify-content:center;max-width:820px;margin:0 auto}
+.moon{width:clamp(110px,18vw,170px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fffaf0,#f3e3c3 55%,#d9c49d);box-shadow:0 0 60px 14px rgba(255,236,200,.25),0 0 140px 40px rgba(255,236,200,.08);display:grid;place-items:center;color:#3b2f4f;font:400 clamp(64px,10vw,104px)/1 "DM Serif Display",serif}
+.kicker{font:700 clamp(24px,3.4vw,32px)/1 Caveat,cursive;color:var(--pink);margin:0 0 6px}
+h1{font:400 clamp(36px,6vw,58px)/1.05 "DM Serif Display",serif;margin:0;text-wrap:balance}
+h1 em{color:var(--ink)}
+.wall{display:flex;justify-content:center;align-items:flex-start;gap:clamp(10px,2.5vw,28px);margin:clamp(40px,6vw,70px) 0;flex-wrap:wrap}
+.pol{background:var(--paper);padding:12px 12px 0;width:clamp(220px,28vw,300px);border-radius:3px;box-shadow:0 18px 40px rgba(0,0,0,.45),0 2px 0 rgba(255,255,255,.4) inset;transform:rotate(var(--r));transition:transform .35s ease;position:relative;margin:0}
+.pol:hover{transform:rotate(0) translateY(-6px) scale(1.03);z-index:2}
+.pol::before{content:"";position:absolute;top:-12px;left:50%;width:74px;height:24px;margin-left:-37px;background:rgba(255,190,205,.55);transform:rotate(calc(var(--r)*-1.5))}
+.pol img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:#222}
+.pol p{margin:0;padding:10px 4px 14px;text-align:center;color:var(--paperInk);font:600 24px/1.1 Caveat,cursive}
+.pol:nth-child(2){margin-top:34px}
+details{max-width:640px;margin:0 auto}
+summary{list-style:none;cursor:pointer;display:grid;justify-items:center;gap:14px;padding:8px;border-radius:14px}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:2px solid var(--pink);outline-offset:6px}
+.env{width:min(320px,80vw);aspect-ratio:3/2;position:relative;background:#f1e2c8;border-radius:6px;box-shadow:0 20px 40px rgba(0,0,0,.45);overflow:hidden}
+.env::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.5%,#e4d1b1 50%) left/50% 100% no-repeat,linear-gradient(to bottom left,transparent 49.5%,#e4d1b1 50%) right/50% 100% no-repeat}
+.env::after{content:"";position:absolute;left:0;right:0;top:0;height:62%;background:#e9d7b9;clip-path:polygon(0 0,100% 0,50% 100%);filter:drop-shadow(0 3px 2px rgba(0,0,0,.15))}
+.seal{position:absolute;left:50%;top:62%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:var(--pink);z-index:2;display:grid;place-items:center;box-shadow:0 3px 8px rgba(0,0,0,.3)}
+.seal svg{width:26px;height:26px}
+.hint{font:700 26px/1.1 Caveat,cursive;color:var(--ink);text-align:center}
+details[open] summary{display:none}
+.letter{background:var(--paper);color:var(--paperInk);border-radius:6px;padding:clamp(26px,5vw,48px);box-shadow:0 24px 60px rgba(0,0,0,.5);background-image:repeating-linear-gradient(transparent 0 37px,rgba(120,110,160,.16) 37px 38px);animation:rise .9s ease both}
+.letter p{font:500 clamp(23px,3.2vw,27px)/38px Caveat,cursive;margin:0 0 38px}
+.letter .to{font-weight:700;color:#c7405c}
+.letter .sign{text-align:right;margin:0}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+.song{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 18px;max-width:640px;margin:clamp(30px,5vw,48px) auto 0;padding:14px 20px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)}
+.disc{width:44px;height:44px;flex:none;border-radius:50%;background:radial-gradient(circle,var(--pink) 0 18%,#151a3e 19% 30%,#2a3070 31% 100%);animation:spin 4s linear infinite;animation-play-state:paused}
+.playing .disc{animation-play-state:running}
+.song .t{font:700 26px/1.05 Caveat,cursive}.song .t small{display:block;font:400 14px Nunito,sans-serif;color:var(--soft)}
+#play{min-height:44px;min-width:110px;padding:0 18px;border:0;border-radius:999px;background:var(--pink);color:#1a1030;font:600 16px Nunito,sans-serif;cursor:pointer}
+#play:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:600px){
+  .hero{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .wall{gap:22px}.pol{width:min(280px,82vw)}.pol:nth-child(2){margin-top:0}
+  .song{border-radius:20px}
+}
+@media(prefers-reduced-motion:reduce){.letter{animation:none}.pol{transition:none}.disc{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<audio id="music" src="song.mp3" preload="auto" loop></audio>
+<main>
+  <header class="hero">
+    <div class="moon" aria-hidden="true">3</div>
+    <div>
+      <p class="kicker">For my palanggaa</p>
+      <h1>Happy 3rd Anniversary, <em>Langga</em></h1>
+    </div>
+  </header>
+
+  <div class="song" id="songbox">
+    <span class="disc" aria-hidden="true"></span>
+    <span class="t">ato kanta, langga<small>You &amp; I — One Direction</small></span>
+    <button id="play" type="button">▶ Play</button>
+  </div>
+
+  <section class="wall" aria-label="Mga litrato natin">
+    <figure class="pol" style="--r:-5deg"><img src="img/p1.jpg" alt="Hinahalikan sa pisngi habang naka-pout, gabi sa beach"><p>RH HANGGANG MA DEDS</p></figure>
+    <figure class="pol" style="--r:3deg"><img src="img/p2.jpg" alt="Magkatabi sa buhangin sa gabi"><p>DAGATTTTTT</p></figure>
+    <figure class="pol" style="--r:-2deg"><img src="img/p3.jpg" alt="Mirror selfie sa harap ng photo wall"><p>MY ALWAYS FAVORITE</p></figure>
+  </section>
+
+  <details id="env">
+    <summary>
+      <div class="env"><span class="seal"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg></span></div>
+      <span class="hint">Dia ako parcel langga, abrihi nii baaaahhhhhh</span>
+    </summary>
+    <article class="letter">
+      <p class="to">Hi, Langgaaa</p>
+      <p>3 Years na dayun taa nohhh. Atay mura ramag kagahapon ra, pero mao na mura rag gi quickie ang panahon pero kadaghan na sa ato gipang agihan, mga kinang a, mga samin2 ba jelosi hehehehe, tas matug raka kalit bisan di okay.</p>
+      <p>Thank you sa pag stay sa akoaa langga, untana pilion nimo ni permi haa, bisan naay time nga kapoy najud ka. Ayaw pag surrender langga, dia ko always diko mo buhi paras imoha. Iloveyouuuu kahilak lage ko karon like right neow.</p>
+      <p>Mao tu, gusto nako makab-ot ato mga pangandoy na mag uban ta hehehe</p>
+      <p>Happy 3rd anniversary, langggaaa!!</p>
+      <p class="sign">— your love kekeng gwapo ♡</p>
+    </article>
+  </details>
+</main>
+<script>
+{
+  const c=document.getElementById('sky'),x=c.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=0,H=0,stars=[];
+  const size=()=>{const d=devicePixelRatio||1;W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    stars=Array.from({length:Math.round(W*H/5000)},()=>({x:Math.random()*W,y:Math.random()*H*.85,r:Math.random()*1.3+.3,p:Math.random()*6.28}))};
+  const draw=t=>{x.clearRect(0,0,W,H);for(const s of stars){const a=.35+.65*Math.abs(Math.sin(s.p+t/1400));x.globalAlpha=a;x.fillStyle='#fff6e6';x.beginPath();x.arc(s.x,s.y,s.r,0,6.29);x.fill()}
+    if(!reduce)requestAnimationFrame(draw)};
+  addEventListener('resize',size);size();requestAnimationFrame(draw);
+
+  const music=document.getElementById('music'),btn=document.getElementById('play'),box=document.getElementById('songbox');
+  const sync=()=>{const on=!music.paused;box.classList.toggle('playing',on);btn.textContent=on?'❚❚ Pause':'▶ Play'};
+  const start=()=>{const p=music.play();if(p&&p.catch)p.catch(()=>{})};
+  music.addEventListener('play',sync);music.addEventListener('pause',sync);
+  btn.addEventListener('click',()=>{music.paused?start():music.pause()});
+  // Pagpindot sa sobre, mag-play ang kanta
+  document.querySelector('#env summary').addEventListener('click',()=>{if(music.paused)start()});
+}
+</script>
+</body>
+</html>
